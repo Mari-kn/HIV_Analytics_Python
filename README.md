@@ -36,16 +36,3 @@ The purpose of this analysis is to examine whether there is a correlation betwee
    - The Pearson correlation value will help understand if **better HIV education** correlates with **fewer AIDS-related deaths**.
    - A **negative correlation** suggests that higher education levels (knowledge of HIV) could be associated with fewer deaths, supporting the idea that increasing HIV education could potentially reduce AIDS-related mortality.
 
-## Code Breakdown
-
-### 1. **Data Filtering**:
-   The datasets are filtered for the required conditions, focusing on "West and Central Africa", age group **15-19**, and excluding "Both" sex for detailed analysis by sex.
-
-```python
-DF1 = preAdo_DF[
-    (preAdo_DF["UNICEF Region"] == "West and Central Africa") &  # Filter by region: West and Central Africa
-    (preAdo_DF["Indicator"] == "Per cent with comprehensive, correct knowledge of HIV") &  # Filter by indicator: HIV knowledge
-    (preAdo_DF["Sex"] != "Both") &  # Exclude "Both" sex category
-    (preAdo_DF["DISAGG_CATEGORY"] == "Age") &  # Filter by age disaggregation
-    (preAdo_DF["DISAGG"] == "15-19")  # Focus on age group 15-19
-]
